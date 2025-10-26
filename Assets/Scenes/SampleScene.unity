@@ -997,8 +997,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933998006}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19758329, y: -0.0000000025062412, z: 5.051498e-10, w: 0.9802861}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.19758327, y: 0, z: 0, w: 0.9802861}
+  m_LocalPosition: {x: 0.00000023841858, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1092,11 +1092,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 94430214b8801bb4c922596058a6b261,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1406741902}
+      addedObject: {fileID: 1406741904}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 94430214b8801bb4c922596058a6b261,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1406741904}
+      addedObject: {fileID: 1406741905}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 94430214b8801bb4c922596058a6b261,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1406741902}
   m_SourcePrefab: {fileID: 100100000, guid: 94430214b8801bb4c922596058a6b261, type: 3}
 --- !u!1 &1161572333
 GameObject:
@@ -1154,11 +1158,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1406741903}
+  animator: {fileID: 1406741905}
   movementAction: {fileID: 3586084473443076927, guid: 250bcd002b565e14a90e509ab71eac21,
+    type: 3}
+  runningAction: {fileID: 6580734841826636645, guid: 250bcd002b565e14a90e509ab71eac21,
+    type: 3}
+  jumpAction: {fileID: 1673823429198334145, guid: 250bcd002b565e14a90e509ab71eac21,
+    type: 3}
+  aimingAction: {fileID: -8305391847910155507, guid: 250bcd002b565e14a90e509ab71eac21,
+    type: 3}
+  shootAction: {fileID: 2768306838137451664, guid: 250bcd002b565e14a90e509ab71eac21,
+    type: 3}
+  reloadAction: {fileID: -1287835205637285983, guid: 250bcd002b565e14a90e509ab71eac21,
     type: 3}
   playerCamera: {fileID: 330585546}
   walkSpeed: 6
+  runSpeed: 9
+  jumpHeight: 2
   turnSmoothTime: 0.1
+  customGravityValue: 9.8
 --- !u!143 &1406741903
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1216,6 +1234,27 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 330585545}
+--- !u!95 &1406741905
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406741900}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3ed14fed88807eb4896d44642c4f12b0, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1432781914
 GameObject:
   m_ObjectHideFlags: 3
@@ -1404,8 +1443,8 @@ MonoBehaviour:
     Value: 1
     m_SpeedMode: 0
     m_MaxSpeed: 2
-    m_AccelTime: 0.2
-    m_DecelTime: 0.1
+    m_AccelTime: 0
+    m_DecelTime: 0.05
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
     m_InvertInput: 1
@@ -1428,8 +1467,8 @@ MonoBehaviour:
     Value: 0
     m_SpeedMode: 0
     m_MaxSpeed: 300
-    m_AccelTime: 0.1
-    m_DecelTime: 0.1
+    m_AccelTime: 0
+    m_DecelTime: 0.05
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
     m_InvertInput: 0
@@ -1585,8 +1624,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897163665}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17971973, y: 0.00000003021935, z: -0.0000000055209055, w: 0.98371786}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.17971969, y: 0, z: 0, w: 0.98371786}
+  m_LocalPosition: {x: 0.00000023841858, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1665,7 +1704,7 @@ Transform:
   m_GameObject: {fileID: 2039289489}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16184404, y: 0, z: 0, w: 0.98681635}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.00000023841858, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
